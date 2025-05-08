@@ -1,4 +1,4 @@
-import React from "react";
+import React , { useState } from "react";
 import './Tournaments.css';
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
@@ -6,6 +6,7 @@ import ActiveGame from '../../Menu/ActiveGame/ActiveGame';
 
 
 function Tournaments(){
+    const [value, setValue] = useState('');
     return(
         <>
             <Header />
@@ -30,7 +31,7 @@ function Tournaments(){
                     </button>
                         
                     <div class="back-search-tournaments">
-                        <input class="search-tournaments" type="text"/>
+                        <input class="search-tournaments" type="text" placeholder="Поиск" value={value} onChange={(e) => setValue(e.target.value)}/>
                     </div>
                 </div>
 
