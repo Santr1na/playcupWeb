@@ -3,7 +3,6 @@ import './Tournaments.css';
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import ActiveGame from '../../Menu/ActiveGame/ActiveGame';
-import { getByPlaceholderText } from "@testing-library/dom";
 
 
 function Tournaments(){
@@ -31,7 +30,7 @@ function Tournaments(){
                     </button>
                         
                     <div class="back-search-tournaments">
-                        <input class="search-tournaments" value={getByPlaceholderText="Поиск"} type="text"/>
+                        <input class="search-tournaments" type="text"/>
                     </div>
                 </div>
 

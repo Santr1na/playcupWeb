@@ -206,6 +206,7 @@ header{
 .btn-profile {
     display: flex;
     align-items: center;
+    align-self: center;
     list-style: none;
     padding: 0px 50px;
     padding-right: 90px;
