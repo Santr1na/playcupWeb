@@ -243,6 +243,8 @@ header{
     & button h4{
         font-size: 14px;
         font-weight: 600;
+        align-items: center;
+        text-align: center;
         font-family: 'Inter';
         white-space: nowrap;
         overflow: hidden;
