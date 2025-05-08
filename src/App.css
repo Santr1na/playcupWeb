@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+html{
+    scrollbar-color: #464663 #00000000;
+    scrollbar-width:thin;    
+    overflow-x:hidden;
+    height: max-content;
+}
+
+body{
+    height: max-content;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+

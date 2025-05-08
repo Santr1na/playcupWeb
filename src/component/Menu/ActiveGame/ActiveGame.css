@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.select-game-menu{
+    display: block;
+    font-family: "REM", sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    padding: 30px;
+}
+
+.active-game{
+    display: flex;
+    width: max-content;
+    align-items: center;
+    cursor: pointer;
+    gap: 8px;
+}
+
+.name-game-menu{
+    color: #fff;
+}
+
+.full-select-game-menu{
+    margin-top: 16px;
+    width: 100%;
+    border-radius: 12px;
+    background-color: #22242e;
+    color: #fff;
+
+    display: none;
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    transition: 0.3s;
+
+    &.active{
+        display: block;
+        transform: translateY(0px);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.first-select-game-menu, .two-select-game-menu{
+    display: flex;
+    padding: 17px 30px;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+}
+
+.first-select-game-menu:hover{
+    background-color:rgba(89, 91, 98, 0.7);
+    border-radius: 12px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.two-select-game-menu:hover{
+    background-color:rgba(89, 91, 98, 0.7);
+    border-radius: 12px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.line-selection-game-menu{
+    padding: 0 30px;
+}

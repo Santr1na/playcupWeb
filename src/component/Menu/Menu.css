@@ -1,0 +1,289 @@
+.select-game-menu{
+    display: block;
+    font-family: "REM", sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    padding: 30px;
+    margin-top: 72px;
+}
+
+.active-game{
+    display: flex;
+    width: max-content;
+    align-items: center;
+    cursor: pointer;
+    gap: 8px;
+}
+
+.name-game-menu{
+    color: #fff;
+}
+
+.full-select-game-menu{
+    margin-top: 16px;
+    width: 100%;
+    border-radius: 12px;
+    background-color: #22242e;
+    color: #fff;
+
+    display: none;
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    transition: 0.3s;
+
+    &.active{
+        display: block;
+        transform: translateY(0px);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.first-select-game-menu, .two-select-game-menu{
+    display: flex;
+    padding: 17px 30px;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+}
+
+.first-select-game-menu:hover{
+    background-color:rgba(89, 91, 98, 0.7);
+    border-radius: 12px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.two-select-game-menu:hover{
+    background-color:rgba(89, 91, 98, 0.7);
+    border-radius: 12px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.line-selection-game-menu{
+    padding: 0 30px;
+}
+
+.go-play-menu{
+    font-family: 'Inter';
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+    position: relative;
+    display: flex;
+    width: 380px;
+    height: 86px;
+    background: #5E01FF;
+    border: #00000000;
+    align-content: center;
+    background: linear-gradient(90deg, rgba(24,37,53,1) 0%, rgba(9,84,177,1) 100%);
+    border-radius: 12px;
+    cursor: pointer;
+    justify-self: center;
+    z-index: 1;
+}
+
+.join-2{
+    position: relative;
+    align-content: center;
+    margin: 0 auto;
+    text-shadow: 0px 0px 17px #fff;
+}
+
+.gamepad{
+    position: absolute;
+    left: 0;
+}
+
+.full-settings-play{
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    transition: 0.3s;
+
+    
+    justify-items: center;
+    font-family: 'Inter';
+    font-size: 20px;
+    color: #fff;
+
+    padding-bottom: 30px;
+
+    background-image: linear-gradient(135deg, #001125, #0954B1);
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    z-index: -100;
+
+    &.active{
+        display: block;
+        transform: translateY(0px);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.format-setting-play, .mode-setting-play, .region-setting-play{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    & div{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding-right: 4px;
+        cursor: pointer;
+    }
+}
+
+.format-setting-play{
+    padding-top: 34px;
+}
+
+.line-setting-play{
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 16px;
+}
+
+.search-play{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-top: 20px;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 20px;
+    color: #fff;
+    gap: 20px;
+    justify-content: center;
+    background-color: #00000000;
+    border: 1px solid #fff;
+    border-radius: 12px;
+    padding: 12px 0;    
+    cursor: pointer;
+}
+
+
+
+.full-tabs-menu{
+    position: relative;
+    margin: 40px 20px 0px 20px;
+    display: block;
+
+    min-height: calc(100vh - 180px); /* Оставляет место для down-tabs-menu */
+    padding-bottom: 0px; /* Дополнительный отступ, чтобы контент не скрывался */
+}
+
+.balance-menu, .left-balance-menu, .profile-menu, .friends-menu, .history-play-menu, .message-menu, .tech-support-menu, .settings-menu, .exit-menu{
+    display: flex;
+    align-items: center;
+    color: #717171;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.profile-menu, .friends-menu, .history-play-menu, .message-menu, .tech-support-menu, .settings-menu, .exit-menu{
+    gap: 14px;
+    cursor: pointer;
+    width: max-content;
+
+    &:hover{
+        color: white;
+    }
+}
+
+.profile-menu:hover path, .friends-menu:hover path, .history-play-menu:hover path, .tech-support-menu:hover path, .settings-menu:hover path, .exit-menu:hover path, .balance-deposit:hover path{
+    stroke: #fff;
+}
+
+.message-menu:hover path{
+    fill: #fff;
+}
+
+.right-balance-menu{
+    cursor: pointer;
+}
+
+.balance-menu{
+    justify-content: space-between;
+}
+
+.left-balance-menu p{
+    padding-left: 14px;
+}
+
+.how-money-balance-menu{
+    margin-left: 20px;
+    color: #FF7F00;
+    margin-right: 5px;
+}
+
+.bitcoin-menu{
+    width: 20px;
+}
+
+.line-tabs-menu{
+    margin: 16px 0;
+}
+
+
+.EnterSteam{
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 50px;
+    background: linear-gradient(90deg, rgba(9,84,177,1) 0%, rgba(61,85,116,1) 100%);
+    background-size: cover;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    gap: 14px;
+    height: max-content;
+
+    & img{
+        width: 24px;
+    }
+
+    &:hover{
+        box-shadow: 0px 0px 20px #0954B1;
+        background: linear-gradient(90deg, rgb(11, 96, 199) 0%, rgb(78, 109, 150) 100%);
+        transform: translateY(-1px);
+    }
+
+    & h4{
+        font-size: 24px;
+    }
+    
+}
+
+.Enter-Steam-Menu{
+    position: sticky;
+    justify-items: center;
+    inset: 0;
+    margin-inline: auto;
+    width: fit-content;
+    align-content: center;
+    height: 50vw;
+}
+
+@media(max-width: 480px){
+    .Enter-Steam-Menu{
+        margin-top: 20px;
+        position: relative;
+    }
+}

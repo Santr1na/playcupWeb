@@ -1,0 +1,758 @@
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeOut{
+    from { opacity: 1; transform: translateY(0);}
+    to { opacity: 0; transform: translateY(10px);}
+  }
+
+.tour{
+    font-family: 'Inter';
+    width: 100%;
+    height: 183px;
+    display: flex;
+    border: none;
+    background-image: linear-gradient(to right, #162740, #0E1420);
+    border-radius: 14px;
+    z-index: 100;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+    
+    margin-bottom: 40px;
+    &:hover img{
+        transform: scale(1.03);
+    }
+}
+  
+.main-info-tour, .money2{
+    margin-left: 30px;
+}
+
+  .tour.active {
+    box-shadow: 0 0px 30px rgb(1, 1, 20);
+    border-radius: 12px 12px 0px 0px;
+  }
+
+.full-width-tour{
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    padding-right: 50px;
+    
+}
+
+.game-image{
+    transition: 0.15s ease-in-out;
+}
+
+#game{
+    width: 400px;
+}
+
+.name-reg{
+    margin-left: 30px;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.name{
+    color: #fff;
+    align-items: center;
+}
+
+.name h2{
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.name h3{
+    font-size:  16px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.reg{
+    padding-top: 40px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 800;
+    width: max-content;
+}
+
+.reg p{
+    font-size: 12px;
+    padding: 4px 8px;
+    background: #5E01FF;
+    border-radius: 3px;
+}
+
+.date-time{
+    display: flex;
+}
+
+.data-tour{
+    display: block;
+    padding-right: 30px;
+}
+
+.data-tour p , .time-tour p {
+    color: #fff;
+    font-weight: 400;
+}
+
+.time-tour{
+    display: block;
+    justify-items: center;
+}
+
+#head-datetime{
+    color: #8E8E8E;
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.mode{
+    display: flex;
+    padding-top: 10px;
+}
+
+.people2{
+    display: flex;
+    padding-top: 12px;
+}
+
+#mode-people, .max-player, #edit-mode-people{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#mode-people{
+    color: #8E8E8E;
+}
+
+.max-player{
+    color: #77FF00;
+    font-weight: 400;
+}
+
+#edit-mode-people{
+    display: flex;
+    color: #fff;
+    padding-left: 16px;
+    font-weight: 400;
+}
+
+.money2{
+    display: flex;
+    height: 32px;
+    align-items: center;
+}
+
+.money2 p{
+    color: #FF7F00;
+    font-weight: 600;
+    font-size: 22px;
+    padding-left: 6px;
+}
+
+#bitcoin{
+    width: 20px;
+    height: 20px;
+    padding: 3px 0;
+}
+
+.tour-details{
+    display: none;
+    position: relative;
+    background-image: linear-gradient(45deg, #0E2D4B -20%, #15223E 60%, #0F1522 100%);
+    z-index: 0;
+    width: 100%;
+    align-items: center;
+
+    transition: 
+        padding 0.3s ease 0.1s,
+        margin-top 0.3s ease;
+        border-radius: 0 0 12px 12px;
+    
+    &.expanded{
+        top: -40px;
+        animation: fadeIn 0.3s ease-in;
+        display: flex; /* если ты используешь display переключение */
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+}
+
+.bottom-content-info-tour{
+    width: max-content;
+    position: relative;
+    z-index: 1000;
+    padding: 14px 0;
+
+    pointer-events: auto;
+
+    display: flex;
+    gap: 80px;
+}
+
+.info-tour-in-window, .rules-tour-in-window, .map-tour-in-window, .stream-tour-in-window, .team-tour-in-window, .prize-tour-in-window{
+    justify-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #89919F;
+
+    display: grid;
+    gap: 4px;
+    cursor: pointer;
+    position: relative;
+
+    &:hover{
+        color: white;
+    }
+}
+
+.info-tour-in-window{
+    margin-left: 80px;
+}
+
+.info-tour-in-window:hover, .rules-tour-in-window:hover, .map-tour-in-window:hover, .stream-tour-in-window:hover, .team-tour-in-window:hover, .prize-tour-in-window:hover{
+    color: #fff;
+}
+
+.info-tour-in-window:hover path, .rules-tour-in-window:hover path, .map-tour-in-window:hover path, .stream-tour-in-window:hover path, .team-tour-in-window:hover path{
+    stroke: #fff;
+}
+
+.prize-tour-in-window:hover path{
+    fill: #fff;
+}
+
+.participate{
+    padding: 14px 100px;
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    width: max-content;
+    height: max-content;
+    margin-left: auto;
+    margin-right: 40px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #FF5900, #FFC95D);
+
+    &:hover{
+        transform: translateY(-2px);
+        box-shadow: 0px 0px 10px #f38448;
+    }
+}
+
+.full-description, .full-rules, .full-map, .full-team, .full-prize{
+    position: absolute;
+    top: 51px;
+    left: 0;
+    z-index: 100;
+    width: max-content;
+    height: max-content;
+    max-width: 260px;
+    max-height: 300px;
+    background-color: #141E30;
+    box-shadow: 0px 0px 70px rgba(69, 144, 206, 0.47);
+    border-radius: 12px;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    text-align:justify;
+
+    padding: 20px 24px;
+
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+}
+
+.info-tour-in-window:hover .full-description, .rules-tour-in-window:hover .full-rules,
+.map-tour-in-window:hover .full-map, .team-tour-in-window:hover .full-team,
+.prize-tour-in-window:hover .full-prize{
+    transform: translateY(0px);
+    opacity: 1;
+    visibility: visible;
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+    z-index: 1000;
+}
+
+
+.full-description,
+.full-rules,
+.full-map,
+.full-team,
+.full-prize,
+.tour-details {
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    cursor:default;
+}
+
+@media(max-width: 1280px){
+    .bottom-content-info-tour{
+        gap: 60px;
+    }
+    .info-tour-in-window{
+        margin-left: 60px;
+    }
+    .participate{
+        margin-right: 40px;
+    }
+}
+
+@media(max-width: 1100px){
+    .tour{
+        height: 160px;
+    }
+    .full-width-tour{
+        padding-right: 30px;
+    }
+    #game{
+        width: 344px;
+    }
+    .name-reg{
+        margin-left: 20px;
+    }
+    .name{
+        & h2{
+            font-size: 20px;
+        }
+        & h3{
+            font-size: 14px;
+        }
+    }
+    .reg p{
+        font-size: 10px;
+    }
+    .data-tour p , .-tour p {
+        font-size: 14px;
+    }
+    #mode-people, .max-player, #edit-mode-people{
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .money2 p{
+        font-size: 18px;
+    }
+    #bitcoin{
+        width: 18px;
+    }
+    .bottom-content-info-tour{
+        gap: 50px;
+    }
+    .info-tour-in-window{
+        margin-left: 40px;
+    }
+    .participate{
+        margin-right: 30px;
+        padding: 14px 80px;
+    }
+    .info-tour-in-window, .rules-tour-in-window, .map-tour-in-window, .stream-tour-in-window, .team-tour-in-window, .prize-tour-in-window{
+        font-size: 10px;
+    }
+    .info-tour-in-window svg, .rules-tour-in-window svg, .map-tour-in-window svg, .stream-tour-in-window svg, .team-tour-in-window svg, .prize-tour-in-window svg{
+        width: 28px;
+    }
+
+
+    .full-description,.full-rules, .full-map, .full-team, .full-prize{
+        top: 46px;
+        max-width: 220px;
+        max-height: 260px;
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 960px){
+    .tour{
+        height: 130px;
+    }
+    .full-width-tour{
+        padding-right: 20px;
+    }
+    #game{
+        width: 280px;
+    }
+    .name-reg{
+        margin-left: 16px;
+    }
+    .name{
+        & h2{
+            font-size: 16px;
+        }
+        & h3{
+            font-size: 12px;
+        }
+    }
+    .reg p{
+        font-size: 8px;
+    }
+    #head-datetime{
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+    .data-tour p, .time-tour p{
+        font-size: 12px;
+    }
+    #mode-people, .max-player, #edit-mode-people{
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .money2 p{
+        font-size: 14px;
+    }
+    #bitcoin{
+        width: 14px;
+    }
+    .bottom-content-info-tour{
+        gap: 50px;
+        padding: 10px 0;
+    }
+    .info-tour-in-window{
+        margin-left: 40px;
+    }
+    .participate{
+        margin-right: 20px;
+        padding: 10px 70px;
+        font-size: 16px;
+    }
+    .info-tour-in-window, .rules-tour-in-window, .map-tour-in-window, .stream-tour-in-window, .team-tour-in-window, .prize-tour-in-window{
+        font-size: 8px;
+        gap: 2px;
+    }
+    .info-tour-in-window svg, .rules-tour-in-window svg, .map-tour-in-window svg, .stream-tour-in-window svg, .team-tour-in-window svg, .prize-tour-in-window svg{
+        width: 24px;
+    }
+
+
+    .full-description,.full-rules, .full-map, .full-team, .full-prize{
+        top: 41px;
+        max-width: 200px;
+        max-height: 240px;
+        padding: 16px 20px;
+        font-size: 13px;
+    }
+}
+
+@media(max-width: 768px){
+    .tour{
+        height: 100px;
+    }
+    .full-width-tour{
+        padding-right: 20px;
+    }
+    .main-info-tour{
+        margin-left: 20px;
+    }
+    .money2{
+        margin-left: 20px;
+    }
+    #game{
+        width: 216px;
+    }
+    .name-reg{
+        margin-left: 10px;
+    }
+    .name{
+        & h2{
+            font-size: 12px;
+        }
+        & h3{
+            font-size: 8px;
+        }
+    }
+    .reg{
+        padding-top: 24px;
+    }
+    .reg p{
+        font-size: 6px;
+    }
+    #head-datetime{
+        font-size: 8px;
+        margin-bottom: 6px;
+    }
+    .data-tour p , .time-tour p {
+        font-size: 8px;
+    }
+    #mode-people, .max-player, #edit-mode-people{
+        font-size: 8px;
+        font-weight: 400;
+    }
+    .mode{
+        padding-top: 8px;
+    }
+    .people2{
+        padding-top: 10px;
+    }
+    .money2 p{
+        font-size: 9px;
+    }
+    #bitcoin{
+        width: 12px;
+    }
+    .bottom-content-info-tour{
+        gap: 30px;
+        padding: 4px 0;
+    }
+    .info-tour-in-window{
+        margin-left: 30px;
+    }
+    .participate{
+        margin-right: 10px;
+        padding: 8px 60px;
+        font-size: 12px;
+        border-radius: 8px;
+    }
+    .info-tour-in-window, .rules-tour-in-window, .map-tour-in-window, .stream-tour-in-window, .team-tour-in-window, .prize-tour-in-window{
+        font-size: 7px;
+        gap: 0px;
+    }
+    .info-tour-in-window svg, .rules-tour-in-window svg, .map-tour-in-window svg, .stream-tour-in-window svg, .team-tour-in-window svg, .prize-tour-in-window svg{
+        width: 20px;
+    }
+
+
+
+    .full-description,.full-rules, .full-map, .full-team, .full-prize{
+        top: 35px;
+        max-width: 160px;
+        max-height: 180px;
+        padding: 14px 16px;
+        font-size: 11px;
+    }
+}
+
+@media(max-width: 640px){
+    .tour{
+        height: 80px;
+        margin-bottom: 30px;
+        border-radius: 4px;
+
+        &.active{
+            border-radius: 6px 6px 0px 0px;
+        }
+    }
+    .full-width-tour{
+        padding-right: 20px;
+    }
+    .main-info-tour{
+        margin-left: 20px;
+    }
+    .money2{
+        margin-left: 20px;
+    }
+    #game{
+        width: 172px;
+    }
+    .name-reg{
+        margin-left: 10px;
+    }
+    .name{
+        & h2{
+            font-size: 10px;
+        }
+        & h3{
+            font-size: 8px;
+        }
+    }
+    .reg{
+        padding-top: 16px;
+    }
+    .reg p{
+        font-size: 5px;
+        padding: 3px 7px;
+    }
+    #head-datetime{
+        font-size: 7px;
+        margin-bottom: 10px;
+    }
+    .data-tour p , .time-tour p {
+        font-size: 7px;
+    }
+    #mode-people, .max-player, #edit-mode-people{
+        font-size: 7px;
+        font-weight: 400;
+    }
+    .mode{
+        padding-top: 6px;
+    }
+    .people2{
+        padding-top: 6px;
+    }
+    .money2 p{
+        font-size: 9px;
+    }
+    #bitcoin{
+        width: 10px;
+    }
+    .bottom-content-info-tour{
+        gap: 30px;
+        padding: 4px 0;
+    }
+    .info-tour-in-window{
+        margin-left: 20px;
+    }
+    .tour-details{
+        border-radius: 0 0 6px 6px;
+        &.expanded{
+            top: -30px;
+        }
+    }
+    .participate{
+        margin-right: 10px;
+        border-radius: 6px;
+        padding: 6px 50px;
+        font-size: 10px;
+    }
+    .info-tour-in-window, .rules-tour-in-window, .map-tour-in-window, .stream-tour-in-window, .team-tour-in-window, .prize-tour-in-window{
+        font-size: 5px;
+    }
+    .info-tour-in-window svg, .rules-tour-in-window svg, .map-tour-in-window svg, .stream-tour-in-window svg, .team-tour-in-window svg, .prize-tour-in-window svg{
+        margin-top: -3px;
+        margin-bottom: -6px;
+        width: 16px;
+    }
+
+
+
+    .full-description,.full-rules, .full-map, .full-team, .full-prize{
+        top: 28px;
+        border-radius: 8px;
+        max-width: 140px;
+        max-height: 160px;
+        padding: 10px 12px;
+        font-size: 10px;
+    }
+}
+
+@media(max-width: 390px){
+    .tour{
+        height: 64px;
+        margin-bottom: 30px;
+        border-radius: 4px;
+
+        &.active{
+            border-radius: 6px 6px 0px 0px;
+        }
+    }
+    .full-width-tour{
+        padding-right: 20px;
+    }
+    .main-info-tour{
+        margin-left: 20px;
+    }
+    .money2{
+        margin-left: 20px;
+    }
+    #game{
+        width: 140px;
+    }
+    .name-reg{
+        margin-left: 10px;
+    }
+    .name{
+        & h2{
+            font-size: 8px;
+        }
+        & h3{
+            font-size: 6px;
+        }
+    }
+    .reg{
+        padding-top: 16px;
+    }
+    .reg p{
+        font-size: 4px;
+        padding: 2px 6px;
+    }
+    #head-datetime{
+        font-size: 6px;
+        margin-bottom: 6px;
+    }
+    .data-tour p , .time-tour p {
+        font-size: 6px;
+    }
+    #mode-people, .max-player, #edit-mode-people{
+        font-size: 6px;
+        font-weight: 400;
+    }
+    .mode{
+        padding-top: 6px;
+    }
+    .people2{
+        padding-top: 6px;
+    }
+    .money2 p{
+        font-size: 7px;
+        padding-left: 4px;
+    }
+    #bitcoin{
+        width: 8px;
+    }
+    .bottom-content-info-tour{
+        gap: 30px;
+        padding: 4px 0;
+    }
+    .info-tour-in-window{
+        margin-left: 20px;
+    }
+    .tour-details{
+        border-radius: 0 0 6px 6px;
+        &.expanded{
+            top: -30px;
+        }
+    }
+    .participate{
+        margin-right: 10px;
+        border-radius: 6px;
+        padding: 5px 40px;
+        font-size: 7px;
+    }
+    .info-tour-in-window, .rules-tour-in-window, .map-tour-in-window, .stream-tour-in-window, .team-tour-in-window, .prize-tour-in-window{
+        font-size: 4px;
+    }
+    .info-tour-in-window svg, .rules-tour-in-window svg, .map-tour-in-window svg, .stream-tour-in-window svg, .team-tour-in-window svg, .prize-tour-in-window svg{
+        margin-top: -7px;
+        margin-bottom: -6px;
+        width: 12px;
+    }
+
+    .bg{
+        max-width: 380px;
+    }
+
+
+    .full-description,.full-rules, .full-map, .full-team, .full-prize{
+        top: 20px;
+        border-radius: 6px;
+        max-width: 100px;
+        max-height: 120px;
+        padding: 6px 8px;
+        font-size: 8px;
+    }
+}

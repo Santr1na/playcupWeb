@@ -1,0 +1,239 @@
+.task{
+    font-family: 'Inter';
+    padding-top: 26px;
+    padding-bottom: 24px;
+    width: 100%;
+    height: max-content;
+    position: relative;
+    border-radius: 12px;
+    background: linear-gradient(45deg, rgba(46, 81, 113, 0.37) 0%, rgba(32, 76, 169, 0.09) 100%);
+    z-index: -1;
+
+    & h4{
+        font-size: 22px;
+        font-weight: 600;
+        padding-left: 24px;
+        background: linear-gradient(90deg, #888888, #fff, #737373);
+        color: transparent;
+        -webkit-background-clip: text; /* Применяем градиент к тексту */
+        background-clip: text;
+    }
+}
+
+.task-full{
+
+}
+
+.line-task{
+    width: 92%;
+    margin: 0 auto;
+    margin-left: 0px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    & hr{
+        opacity: 0.5;
+    }
+}
+
+#condition{
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+    margin-right: 28px;
+}
+
+.Point-Task{
+    display: flex;
+    gap: 22px;
+    margin-right: 10px;
+}
+
+.condition{
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.point{
+    width: 4px;
+}
+
+.state{
+    width: 16px;
+}
+
+.task-one{
+    margin-top: 30px;
+    padding-left: 24px;
+}
+
+.term{
+    padding-top: 7px;
+    color: #B3B3B3;
+    font-size: 12px;
+    font-weight: 400;
+    padding-left: 26px;
+}
+
+@media(max-width: 1280px){
+    .task{
+        & h4{
+            font-size: 18px;
+        }
+    }
+    .Point-Task{
+        gap: 14px;
+        align-items: baseline;
+    }
+    .condition{
+        font-size: 11px;
+    }
+    .point{
+        width: 3px;
+    }
+    .task-one{
+        margin-top: 24px;
+    }
+    .term{
+        font-size: 10px;
+        padding-left: 18px;
+    }
+}
+
+@media(max-width: 1100px){
+    .task{
+        & h4{
+            font-size: 16px;
+        }
+    }
+    .Point-Task{
+        gap: 12px;
+        align-items: baseline;
+    }
+    .condition{
+        font-size: 10px;
+    }
+    .state{
+        width: 14px;
+    }
+    .point{
+        width: 3px;
+    }
+    .task-one{
+        margin-top: 20px;
+    }
+    .term{
+        font-size: 9px;
+        padding-left: 14px;
+    }
+}
+
+@media(max-width: 960px){
+    .task{
+        & h4{
+            font-size: 14px;
+        }
+    }
+    .line-task{
+        & hr{
+            height: 0.1px;
+            border: none;
+        }
+    }
+    .Point-Task{
+        gap: 12px;
+        align-items: baseline;
+    }
+    .condition{
+        font-size: 9px;
+    }
+    .state{
+        width: 12px;
+    }
+    .point{
+        width: 3px;
+    }
+    .task-one{
+        margin-top: 20px;
+    }
+    .term{
+        font-size: 8px;
+        padding-left: 14px;
+    }
+}
+
+@media(max-width: 768px){
+    .task{
+        & h4{
+            font-size: 12px;
+        }
+    }
+    .line-task{
+        & hr{
+            height: 0.1px;
+            border: none;
+        }
+    }
+    .Point-Task{
+        gap: 10px;
+        align-items: baseline;
+    }
+    .condition{
+        font-size: 8px;
+    }
+    .state{
+        width: 10px;
+    }
+    .point{
+        width: 3px;
+    }
+    .task-one{
+        margin-top: 14px;
+    }
+    .term{
+        font-size: 7px;
+        padding-left: 14px;
+    }
+}
+
+@media(max-width: 640px){
+    .task{
+        border-radius: 6px;
+        padding-top: 14px;
+        & h4{
+            font-size: 12px;
+            padding-left: 16px;
+        }
+    }
+    .line-task{
+        margin: 10px 0;
+        & hr{
+            height: 0.1px;
+            border: none;
+        }
+    }
+    .Point-Task{
+        gap: 6px;
+        align-items: baseline;
+    }
+    .condition{
+        font-size: 7px;
+    }
+    #condition{
+        margin-right: 10px;
+    }
+    .state{
+        width: 10px;
+    }
+    .point{
+        width: 3px;
+    }
+    .task-one{
+        margin-top: 14px;
+        padding-left: 16px;
+    }
+    .term{
+        font-size: 6px;
+        padding-left: 8px;
+    }
+}

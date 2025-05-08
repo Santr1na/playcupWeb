@@ -1,0 +1,100 @@
+main{
+    font-family: 'Inter';
+}
+
+.bg {
+    z-index: -10;
+    position: absolute;
+    max-width: 1920px;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.about-main{
+    color: #fff;
+    width: 1500px;
+}
+
+.lozung-about{
+    font-weight: 900;
+    font-size: 64px;
+    width: 70%;
+    margin: 80px 0;
+}
+
+.We-about, .Our-goal-about, .Our-mission-about{
+    width: 95%;
+    padding-bottom: 20px;
+
+    & p{
+        font-weight: 900;
+        font-size: 28px;
+    }
+
+    & p span{
+        font-weight: 600;
+        font-size: 20px;
+        align-content: center;
+        margin-left: 4px;
+    }
+} 
+
+.We, .Our-goal, .Our-mission{
+    font-weight: 900;
+    font-size: 28px;
+    display: flex;
+    width: max-content;
+}
+
+
+.What-we-offer{
+    margin: 70px 0;
+    font-weight: 900;
+    font-size: 52px;
+}
+
+.about-offer-one, .about-offer-two, .about-offer-three, .about-offer-four{
+    display: flex;
+    height: max-content;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+
+.about-offer-two, .about-offer-four{
+    flex-direction: row-reverse;
+}
+
+.about-offer-four{
+    padding-bottom: 100px;
+}
+
+.about-offer-text-two, .about-offer-text-four{
+    text-align: right;
+}
+
+.about-offer-text-one, .about-offer-text-two, .about-offer-text-three, .about-offer-text-four{
+    align-content: center;
+
+    & p{
+        font-weight: 900;
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
+
+    & span{
+        font-weight: 600;
+        font-size: 24px;
+        display: inline-block;
+        width: 70%;
+    }
+}
+
+.about-offer-image-one, .about-offer-image-two, .about-offer-image-three, .about-offer-image-four{
+    border-radius: 12px;
+
+    & img{
+        box-shadow: 0px 0px 150px rgba(128, 166, 208, 0.23);
+        border-radius: 12px;
+    }
+}

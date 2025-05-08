@@ -1,0 +1,683 @@
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+html{
+    font-family: 'Inter';
+    font-weight: 600;
+    background-color: #0D0E12;
+}
+
+ul{
+    list-style: none;
+}
+
+header{
+    position: relative;
+    z-index: 2;
+    background: #0D0E12;
+    width: 100%;
+    height: 74px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    width: 200px;
+}
+
+.navigate{
+    margin-left: 4%;
+    display: flex;
+    align-items: center;
+    width: max-content;
+    gap: 50px;
+
+    & Link{
+        width: max-content;
+    }
+}
+
+
+
+.logo-and-navigate{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navigate-menu{
+    font-size: 18px;
+    position: relative;
+    gap: 50px;
+    display: flex;
+}
+
+.navigate-and-profile-menu{
+    align-content: center;
+    display: flex;
+}
+
+.bell-and-chat{
+    align-content: center;
+    margin-left: 30px;
+}
+
+.bell-chat{
+    align-items: center;
+    position: relative;
+    gap: 30px;
+    display: flex;
+
+    & li{
+        position: relative;
+    }
+}
+
+.bell-icon, .chat-icon{
+    cursor: pointer;
+    width: 100%;
+}
+
+.bell-icon:hover path{
+    stroke: #fff;
+}
+
+.chat-icon:hover path{
+    fill: #fff;
+}
+
+.full-bell-info, .full-chat-info{
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    overflow-x: hidden;
+
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    background-color: #1E202B;
+    border-radius: 12px;
+    width: 400px;
+    height: 350px;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    transition: 0.3s;
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+    &.active{
+        transform: translateY(0px);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.padding-mini-notification{
+    padding: 0px 32px;
+}
+
+.chat{
+    font-weight: 600;
+    font-size: 24px;
+    height: 100%;
+    width: 100%;
+    justify-items: center;
+    position: relative;
+    align-content: center;
+}
+
+.Header-notification{
+    padding-top: 24px;
+    color: #fff;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.description-notification{
+    padding-top: 8px;
+    padding-bottom: 10px;
+    color: #717171;
+    font-family: 'Inter';
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.more-info-notification{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & button{
+        background-color: #464663;
+        border: none;
+        border-radius: 6px;
+        padding: 3px 12px;
+        font-weight: 400;
+        color: white;
+        font-family: 'Inter';
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+    }
+}
+
+.date-notification{
+    color: #717171;
+    font-family: 'Inter';
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.line-notification{
+    width: 100%;
+    padding-top: 24px;
+}
+
+.view-all-notifications{
+    position: sticky;
+    display: flex;
+    bottom: 0;
+    height: 44px;
+    padding-left: 32px;
+    gap: 10px;
+    align-items: center;
+    border-top: 1px solid #464663;
+    width: 100%;
+    color: #B3B3B3;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #1E202B;
+
+    & img, & p{
+        cursor: pointer;
+    }
+}
+
+.btn-profile {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0px 50px;
+    padding-right: 90px;
+    font: 'Inter';
+    border-radius: 12px;
+
+    & button{
+        border-radius: 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 50px;
+        background: linear-gradient(90deg, rgba(9,84,177,1) 0%, rgba(61,85,116,1) 100%);
+        background-size: cover;
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        gap: 14px;
+        height: max-content;
+
+        & img{
+            width: 28px;
+        }
+
+        &:hover{
+            box-shadow: 0px 0px 20px #0954B1;
+            background: linear-gradient(90deg, rgb(11, 96, 199) 0%, rgb(78, 109, 150) 100%);
+            transform: translateY(-1px);
+        }
+        
+    }
+
+    & button h4{
+        font-size: 14px;
+        font-weight: 600;
+        font-family: 'Inter';
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    & button h5{
+        font-family: 'Inter';
+        margin-left: 10px;
+        font-size: 12px;
+        font-weight: 600px;
+        align-content: center;
+        text-shadow: 0px -1px 12px #fff;
+    }
+
+    & button h6{
+        font-family: 'Inter';
+        color: #77FF00;
+        font-weight: 600;
+        font-size: 10px;
+        padding: 6px 0;
+        text-shadow: 0px 0px 8px #77FF00;
+    }
+}
+
+@media (max-width: 1100px){
+    header{
+        height: 64px;
+    }
+    .logo{
+        width: 180px;
+    }
+    .navigate{
+        gap: 40px;
+    }
+    .navigate-menu{
+        font-size: 16px;
+        gap: 40px;
+    }
+    .bell-and-chat{
+        margin-left: 20px;
+    }
+    .bell-chat{
+        gap: 20px;
+    }
+    .bell-icon, .chat-icon{
+        width: 26px;
+    }
+
+    .full-bell-info, .full-chat-info{
+        width: 360px;
+        height: 300px;
+    }
+
+    .Header-notification{
+        font-size: 18px;
+        padding-top: 20px;
+    }
+
+    .description-notification{
+        padding-top: 6px;
+        padding-bottom: 8px;
+        font-size: 13px;
+    }
+
+    .more-info-notification{
+        & button{
+            font-size: 12px;
+        }
+    }
+
+    .date-notification{
+        font-size: 11px;
+    }
+
+    .line-notification{
+        padding-top: 18px;
+    }
+
+    .view-all-notifications{
+        font-size: 12px;
+
+        & img{
+            width: 24px;
+        }
+    }
+
+    .btn-profile{
+        padding: 0px 40px;
+        padding-right: 70px;
+        
+        & button{
+            padding: 8px 36px;
+            gap: 10px;
+
+            & img{
+                width: 24px;
+            }
+            & h4{
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media(max-width: 960px){
+    .logo{
+        width: 160px;
+    }
+    .navigate{
+        gap: 20px;
+    }
+    .navigate-menu{
+        font-size: 14px;
+        gap: 20px;
+    }
+    .bell-icon, .chat-icon{
+        width: 22px;
+    }
+
+    .full-bell-info, .full-chat-info{
+        width: 340px;
+        height: 280px;
+    }
+
+    .Header-notification{
+        font-size: 16px;
+        padding-top: 16px;
+    }
+
+    .description-notification{
+        padding-top: 6px;
+        padding-bottom: 8px;
+        font-size: 11px;
+    }
+
+    .more-info-notification{
+        & button{
+            font-size: 10px;
+        }
+    }
+
+    .date-notification{
+        font-size: 9px;
+    }
+
+    .line-notification{
+        padding-top: 16px;
+
+        & hr{
+            border-width: 0.5px;
+        }
+    }
+
+    .view-all-notifications{
+        font-size: 10px;
+
+        & img{
+            width: 20px;
+        }
+    }
+
+    .btn-profile{
+        padding: 0px 30px;
+        padding-right: 70px;
+        
+        & button{
+            padding: 8px 36px;
+            gap: 10px;
+
+            & img{
+                width: 20px;
+            }
+        }
+    }
+}
+
+@media(max-width: 768px){
+    .logo{
+        width: 52px;
+    }
+    .navigate{
+        gap: 16px;
+    }
+    .navigate-menu{
+        font-size: 12px;
+        gap: 16px;
+    }
+    .bell-icon, .chat-icon{
+        width: 20px;
+    }
+
+    .full-bell-info, .full-chat-info{
+        width: 320px;
+        height: 260px;
+    }
+
+    .Header-notification{
+        font-size: 14px;
+        padding-top: 16px;
+    }
+
+    .description-notification{
+        padding-top: 6px;
+        padding-bottom: 8px;
+        font-size: 9px;
+    }
+
+    .more-info-notification{
+        & button{
+            font-size: 8px;
+            border-radius: 4px;
+        }
+    }
+
+    .date-notification{
+        font-size: 7px;
+    }
+
+    .line-notification{
+        padding-top: 14px;
+        
+        & hr{
+            border-width: 0.5px;
+        }
+    }
+
+    .view-all-notifications{
+        font-size: 8px;
+
+        & img{
+            width: 18px;
+        }
+    }
+
+    .btn-profile{
+        padding: 0px 20px;
+        padding-right: 70px;
+        
+        & button{
+            padding: 8px 30px;
+            gap: 10px;
+
+            & img{
+                width: 20px;
+            }
+        }
+    }
+}
+
+@media(max-width: 640px){
+    .logo{
+        width: 52px;
+    }
+    .navigate{
+        gap: 16px;
+    }
+    .navigate-menu{
+        font-size: 12px;
+        gap: 16px;
+    }
+    .bell-icon, .chat-icon{
+        width: 18px;
+    }
+
+    .full-bell-info, .full-chat-info{
+        width: 280px;
+        height: 200px;
+    }
+
+    .Header-notification{
+        font-size: 12px;
+        padding-top: 14px;
+    }
+
+    .description-notification{
+        padding-top: 6px;
+        padding-bottom: 8px;
+        font-size: 8px;
+    }
+
+    .more-info-notification{
+        & button{
+            font-size: 7px;
+            border-radius: 4px;
+        }
+    }
+
+    .date-notification{
+        font-size: 6px;
+    }
+
+    .line-notification{
+        padding-top: 12px;
+        
+        & hr{
+            border-width: 0.5px;
+        }
+    }
+
+    .view-all-notifications{
+        font-size: 8px;
+
+        & img{
+            width: 18px;
+        }
+    }
+
+    .btn-profile{
+        padding: 0px 20px;
+        padding-right: 70px;
+        
+        & button{
+            padding: 8px 30px;
+            gap: 10px;
+
+            & img{
+                width: 20px;
+            }
+        }
+    }
+}
+
+@media(max-width: 480px){
+    .logo{
+        width: 42px;
+    }
+    .navigate{
+        gap: 10px;
+    }
+    .navigate-menu{
+        font-size: 12px;
+        gap: 10px;
+    }
+    .bell-icon, .chat-icon{
+        width: 16px;
+    }
+    .bell-chat{
+        margin-right: 40px;
+    }
+    .btn-profile{
+        display: none;
+    }
+}
+
+@media(max-width: 384px){
+    .logo{
+        width: 42px;
+    }
+    .navigate{
+        gap: 10px;
+    }
+    .navigate-menu{
+        font-size: 10px;
+        gap: 12px;
+    }
+    .bell-icon, .chat-icon{
+        width: 16px;
+    }
+    .bell-chat{
+        margin-right: 40px;
+    }
+    .btn-profile{
+        display: none;
+    }
+}
+
+@media(max-width: 384px){
+    .full-bell-info, .full-chat-info{
+        width: 240px;
+        height: 160px;
+    }
+
+    .Header-notification{
+        font-size: 10px;
+        padding-top: 12px;
+    }
+
+    .description-notification{
+        padding-top: 4px;
+        padding-bottom: 8px;
+        font-size: 7px;
+    }
+
+    .more-info-notification{
+        & button{
+            font-size: 6px;
+            border-radius: 4px;
+        }
+    }
+
+    .date-notification{
+        font-size: 5px;
+    }
+
+    .line-notification{
+        padding-top: 10px;
+        
+        & hr{
+            border-width: 0.3px;
+        }
+    }
+
+    .view-all-notifications{
+        font-size: 6px;
+
+        & img{
+            width: 14px;
+        }
+    }
+}
+
+#polygon-profile{
+    transform: rotate(180deg);
+    filter: drop-shadow(0px 0px 4px #77FF00);
+
+    & path{
+        fill: #77FF00;
+    }
+}
+
+.menu{
+    cursor: pointer;
+    margin-right: 30px;
+    align-content: center;
+}
+
+.up-glow {
+    position: absolute;
+    z-index: -2;
+    top: -400px;
+    left: 0;
+    height: 300px;
+    width: 100%;
+    border-radius: 100%;
+    background: rgb(19, 78, 204);
+    box-shadow: 10px 10px 300px 250px rgba(19, 94, 255, 0.25);
+    margin-left: auto;
+}
