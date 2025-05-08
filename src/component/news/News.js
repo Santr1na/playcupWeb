@@ -1,7 +1,7 @@
 import React from "react";
 import './News.css';
 import polygon from '../../icons/Polygon.svg';
-import img_news from '../../img/img-news.svg';
+import img_news from '../../img/img-news.png';
 
 function News(){
     return(

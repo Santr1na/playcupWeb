@@ -1,6 +1,7 @@
 {
   "name": "playcup",
   "version": "0.1.0",
+  "homepage": "https://playcup-web.vercel.app",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",

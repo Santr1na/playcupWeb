@@ -2,10 +2,10 @@ import React from "react";
 import './about.css';
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import image_about_1 from './about-image1.svg';
-import image_about_2 from './about-image2.svg';
-import image_about_3 from './about-image3.svg';
-import image_about_4 from './about-image4.svg';
+import image_about_1 from './about-image1.jpg';
+import image_about_2 from './about-image2.jpg';
+import image_about_3 from './about-image3.jpg';
+import image_about_4 from './about-image4.jpg';
 
 
 function About(){

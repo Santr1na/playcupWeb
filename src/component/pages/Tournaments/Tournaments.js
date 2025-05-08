@@ -26,8 +26,8 @@ function Tournaments(){
                 <div class="up-tournaments-page">
                     <ActiveGame />
 
-                    <button class="create-tournaments">
-                        Создать турнир
+                    <button class="create-tournaments" translate="no">
+                        <p>Создать турнир</p>
                     </button>
                         
                     <div class="back-search-tournaments">

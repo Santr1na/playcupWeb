@@ -1,3 +1,7 @@
+main{
+    font-family: 'Inter';
+}
+
 .bg {
     z-index: -10;
     position: absolute;

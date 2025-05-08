@@ -217,6 +217,7 @@ header{
         border-radius: 12px;
         display: inline-flex;
         align-items: center;
+        align-content: center;
         justify-content: center;
         padding: 10px 50px;
         background: linear-gradient(90deg, rgba(9,84,177,1) 0%, rgba(61,85,116,1) 100%);
@@ -243,8 +244,7 @@ header{
     & button h4{
         font-size: 14px;
         font-weight: 600;
-        align-items: center;
-        text-align: center;
+        margin: auto 0;
         font-family: 'Inter';
         white-space: nowrap;
         overflow: hidden;

@@ -14,8 +14,11 @@
 
 .image-new{
     width: 100%;
+    justify-content: center;
     & img{
-        width: 100%;
+        margin: 0 auto;
+        width: 105%;
+        justify-items: center;
     }
 }
 
