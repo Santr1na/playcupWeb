@@ -2,17 +2,15 @@ import React from "react";
 import './about.css';
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import image_about_1 from './about-image1.jpg';
-import image_about_2 from './about-image2.jpg';
-import image_about_3 from './about-image3.jpg';
-import image_about_4 from './about-image4.jpg';
+import image_about_1 from './about-image1.png';
+import image_about_2 from './about-image2.png';
+import image_about_3 from './about-image3.png';
+import image_about_4 from './about-image4.png';
 
 
 function About(){
     return(
         <>
-            <Header />
-
             <svg opacity={1} class="bg" width="1521" height="1096" viewBox="0 0 1521 1096" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M542 199L343.5 0.291748H583.5L922.708 339.292L542 199ZM1521 773L748.375 0.291748H988.5L1029.42 41L1521 773ZM1081.21 1096L-16 0.291748H225.5L435.5 209.876L1081.21 1096ZM1.5 743.5H0V503L270.208 771.792L1.5 743.5ZM150 561.896L0 413V172.792L722.812 894.292L150 561.896Z" fill="url(#paint0_linear_8_103)" fill-opacity="0.15"/>
               <defs>
@@ -22,6 +20,9 @@ function About(){
                   </linearGradient>
               </defs>
             </svg>
+            <Header />
+
+
 
             <main>
                 <div class="center">

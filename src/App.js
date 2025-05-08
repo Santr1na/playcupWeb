@@ -1,4 +1,5 @@
 import React from 'react';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
 import Home from './component/pages/MainIndex/MainIndex'
@@ -12,6 +13,7 @@ function App() {
     return (
         <>
             <BrowserRouter>
+            <SpeedInsights />
               <ScrollToTop />
               <Routes>
                 <Route path='/' element={<Home />} />
