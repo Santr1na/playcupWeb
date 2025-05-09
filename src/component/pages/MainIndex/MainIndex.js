@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useMemo, useState} from 'react';
 import './MainIndex.css';
+import Tour from '../../cardsTournaments/Tour/Tour.js';
 import styled, { keyframes } from "styled-components";
 import steam from '../../../icons/Steam.svg';
 import gamepad from '../../../icons/gamepad.svg';
@@ -9,6 +10,7 @@ import Task from '../../task/Task';
 import polygon from '../../../icons/Polygon.svg';
 import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
+import { Link } from 'react-router-dom';
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(-10px); }
@@ -69,6 +71,19 @@ const GoPlayButton = styled.button`
 `;
 
 const MainIndex = () => {
+      const [activeTour, setActiveTour] = useState('future'); // 'future', 'now', 'past'
+      const filteredTournaments = useMemo(() => {
+        const now = new Date();
+        return Tour.filter(tour => {
+          const start = new Date(tour.dateStart);
+    
+          if (activeTour === 'future') {
+              console.log(start > now);
+              return start > now;
+          }
+          return true;
+        });
+      }, [activeTour]);
     return(
         <>
         <Header />
@@ -111,12 +126,12 @@ const MainIndex = () => {
                 <h1>Главные турниры</h1>
 
                 <div className='Card-news'>
-                    <div style={{width: '100%', position: 'relative'}}>
-                        <CardTournaments className='Go-Play'/>
+                    <div style={{width: '100%', position: 'relative', height: 'max-content'}}>
+                        <CardTournaments className='Go-Play' tournaments={filteredTournaments} />
 
                         <div class="more-event">
-                            <a href="#"><p class="text-more-event">Больше событий</p>
-                            <img src={polygon} alt="" class="polygon"/></a>
+                            <Link to='/tournaments'><p class="text-more-event">Больше событий</p>
+                            <img src={polygon} alt="" class="polygon"/></Link>
                         </div>
                     </div>
 

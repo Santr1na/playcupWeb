@@ -29,6 +29,7 @@ const StyledMenu = styled.nav`
   position: absolute;
   height: 100vw;
   top: 0;
+  bottom: 0;
   right: 0;
   z-index: 1;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(110%)")};

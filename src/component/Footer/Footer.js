@@ -28,7 +28,7 @@ const Footer = () => {
                             <div class="now-play">
                                 <p class="quantity">0<p class="player">играют</p></p>
                             </div>
-                            <a href="#" id="white-link">Активные турниры</a>
+                            <Link to='/tournaments' id="white-link">Активные турниры</Link>
                             <a href="#" id="white-link">Система призов</a>
                             <a href="#" id="white-link">История</a>  
                         </div>
@@ -42,9 +42,9 @@ const Footer = () => {
                         </div>
                     </div>
                     <div class="footer-social-media">
-                        <a href='#'><img src={vk} alt="" class="VK" id="social-media"/></a>
-                        <a href='#'><img src={steam} alt="" class="Steam-img" id="social-media"/></a>
-                        <a href='#'><img src={tg} alt="" class="Telegram" id="social-media"/></a>
+                        <a href='https://vk.com/'><img src={vk} alt="" class="VK" id="social-media"/></a>
+                        <a href='https://store.steampowered.com/'><img src={steam} alt="" class="Steam-img" id="social-media"/></a>
+                        <a href='https://web.telegram.org/'><img src={tg} alt="" class="Telegram" id="social-media"/></a>
                     </div>
                     
                 </div>

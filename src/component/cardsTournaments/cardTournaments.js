@@ -1,279 +1,9 @@
 import React, {useState} from "react";
 import './cardTournaments.css';
-import dota from '../../img/dota460.jpg';
-import cs from '../../img/counter-strike-2.jpg';
-import de_dust2 from '../../icons/de_dust2.webp';
-import de_mirage from '../../icons/de_mirage.webp';
-import de_train from '../../icons/de_train.webp';
-import photo_team from '../../icons/photo_team.jpg';
 import bitcoin from '../../icons/bitcoin.svg'
+import Tour from './Tour/Tour';
 
-const Tour = [
-  {
-      image_game: dota,
-      category: 'DOTA 2',
-      name: 'CUMBERSOME CUP',
-      data: '20.12.2025',
-      time: '18:00',
-      format: '1v1',
-      max_player: 512,
-      prize: 10,
-
-      full_info: {
-        description: 'Описание ОписаниеОписание ОписаниеОписание ОписаниеОписание Описание',
-        rules: 'Правила ПравилаПравила ПравилаПравила ПравилаПравила ПравилаПравила ПравилаПравила Правила',
-        map: {
-            maps: [
-                {
-                    photo_map: de_dust2,
-                    name_map: 'Dust 2'
-                },
-                {
-                    photo_map: de_mirage,
-                    name_map: 'Mirage'
-                },
-                {
-                    photo_map: de_train,
-                    name_map: 'Train'
-                },
-            ],
-            maps_dota: [
-                {
-                    name_map: 'У этой игры одна карта'
-                }
-            ]
-        },
-        teams: {
-            team: [
-                {
-                    photo_team: photo_team,
-                    name_team: 'DEAD INSADE'
-                },
-                {
-                    photo_team: photo_team,
-                    name_team: 'DEAD INSADE'
-                },
-                {
-                    photo_team: photo_team,
-                    name_team: 'DEAD INSADE'
-                }
-            ]
-        }
-      }
-  },
-  {
-    image_game: cs,
-    category: 'CS 2',
-    name: 'CUMBERSOME CUP',
-    data: '20.12.2025',
-    time: '18:00',
-    format: '1v1',
-    max_player: 512,
-    prize: 5,
-
-    full_info: {
-        description: 'Описание ОписаниеОписание ОписаниеОписание ОписаниеОписание Описание',
-        rules: 'Правила ПравилаПравила ПравилаПравила ПравилаПравила ПравилаПравила ПравилаПравила Правила',
-        map: {
-            maps: [
-                {
-                    photo_map: de_dust2,
-                    name_map: 'Dust 2'
-                },
-                {
-                    photo_map: de_mirage,
-                    name_map: 'Mirage'
-                },
-                {
-                    photo_map: de_train,
-                    name_map: 'Train'
-                },
-            ],
-            maps_dota: [
-                {
-                    name_map: 'У этой игры одна карта'
-                }
-            ]
-        },
-        teams: {
-            team: [
-                {
-                    photo_team: photo_team,
-                    name_team: 'DEAD INSADE1231231'
-                },
-                {
-                    photo_team: photo_team,
-                    name_team: 'DEAD INSADE'
-                },
-                {
-                    photo_team: photo_team,
-                    name_team: 'DEAD INSADE'
-                }
-            ]
-        }
-      }
-  },
-
-  {
-    image_game: dota,
-    category: 'DOTA 2',
-    name: 'CUMBERSOME CUP',
-    data: '20.12.2025',
-    time: '18:00',
-    format: '1v1',
-    max_player: 512,
-    prize: 10,
-
-    full_info: {
-        description: 'Описание ОписаниеОписание ОписаниеОписание ОписаниеОписание Описание',
-        rules: 'Правила ПравилаПравила ПравилаПравила ПравилаПравила ПравилаПравила ПравилаПравила Правила',
-        map: {
-            maps: [
-                {
-                    photo_map: de_dust2,
-                    name_map: 'Dust 2'
-                },
-                {
-                    photo_map: de_mirage,
-                    name_map: 'Mirage'
-                },
-                {
-                    photo_map: de_train,
-                    name_map: 'Train'
-                },
-            ],
-            maps_dota: [
-                {
-                    name_map: 'У этой игры одна карта'
-                }
-            ]
-        },
-        teams: {
-            team: [
-                {
-                    photo_team: photo_team,
-                    name_team: 'DEAD INSADE'
-                },
-                {
-                    photo_team: photo_team,
-                    name_team: 'DEAD INSADE'
-                },
-                {
-                    photo_team: photo_team,
-                    name_team: 'DEAD INSADE'
-                }
-            ]
-        }
-      }
-  },
-
-  {
-    image_game: cs,
-    category: 'CS 2',
-    name: 'CUMBERSOME CUP',
-    data: '20.12.2025',
-    time: '18:00',
-    format: '1v1',
-    max_player: 512,
-    prize: 10,
-
-    full_info: {
-        description: 'Описание ОписаниеОписание ОписаниеОписание ОписаниеОписание Описание',
-        rules: 'Правила ПравилаПравила ПравилаПравила ПравилаПравила ПравилаПравила ПравилаПравила Правила',
-        map: {
-            maps: [
-                {
-                    photo_map: de_dust2,
-                    name_map: 'Dust 2'
-                },
-                {
-                    photo_map: de_mirage,
-                    name_map: 'Mirage'
-                },
-                {
-                    photo_map: de_train,
-                    name_map: 'Train'
-                },
-            ],
-            maps_dota: [
-                {
-                    name_map: 'У этой игры одна карта'
-                }
-            ]
-        },
-        teams: {
-            team: [
-                {
-                    photo_team: photo_team,
-                    name_team: 'DEAD INSADE1231231'
-                },
-                {
-                    photo_team: photo_team,
-                    name_team: 'DEAD INSADE'
-                },
-                {
-                    photo_team: photo_team,
-                    name_team: 'DEAD INSADE'
-                }
-            ]
-        }
-      }
-  },
-  {
-    image_game: dota,
-    category: 'CS 2',
-    name: 'CUMBERSOME CUP',
-    data: '20.12.2025',
-    time: '18:00',
-    format: '1v1',
-    max_player: 512,
-    prize: 10,
-
-    full_info: {
-        description: 'Описание ОписаниеОписание ОписаниеОписание ОписаниеОписание Описание',
-        rules: 'Правила ПравилаПравила ПравилаПравила ПравилаПравила ПравилаПравила ПравилаПравила Правила',
-        map: {
-            maps: [
-                {
-                    photo_map: de_dust2,
-                    name_map: 'Dust 2'
-                },
-                {
-                    photo_map: de_mirage,
-                    name_map: 'Mirage'
-                },
-                {
-                    photo_map: de_train,
-                    name_map: 'Train'
-                },
-            ],
-            maps_dota: [
-                {
-                    name_map: 'У этой игры одна карта'
-                }
-            ]
-        },
-        teams: {
-            team: [
-                {
-                    photo_team: photo_team,
-                    name_team: 'DEAD INSADE'
-                },
-                {
-                    photo_team: photo_team,
-                    name_team: 'DEAD INSADE'
-                },
-                {
-                    photo_team: photo_team,
-                    name_team: 'DEAD INSADE'
-                }
-            ]
-        }
-      }
-  }
-]
-
-function CardTournament(){
+function CardTournament({ tournaments }){
 
     const [expandedTour, setExpandedTour] = useState(null);
 
@@ -288,49 +18,49 @@ function CardTournament(){
     return(
         <div style={{width: '100%'}}>
             {
-                Tour.map((tour, index) => {
+                tournaments && tournaments.map((tour, index) => {
                     return(
                         <div key={index} className="tour-container">
                             <div className={`tour ${expandedTour === index ? 'active' : ''}`}
                                     onClick={() => toggleTour(index)}
                                     style={{cursor: 'pointer'}} >
-                            <img class="game-image" id="game" src={tour.image_game} alt="game"/>  
-                            <div class="full-width-tour">
-                                <div class="name-reg">
-                                    <div class="name">
-                                        <h2 class="game">{tour.category}</h2>
-                                        <h3 class="tournament">{tour.name}</h3>
+                            <img className="game-image" id="game" src={tour.image_game} alt="game"/>  
+                            <div className="full-width-tour">
+                                <div className="name-reg">
+                                    <div className="name">
+                                        <h2 className="game">{tour.category}</h2>
+                                        <h3 className="tournament">{tour.name}</h3>
                                     </div>
-                                    <div class="reg">
-                                        <p class="reg">
+                                    <div className="reg">
+                                        <p className="reg">
                                             ИДЁТ РЕГИСТРАЦИЯ
                                         </p>
                                     </div>
                                 </div>
-                                <div class="main-info-tour">
-                                    <div class="date-time">
-                                        <div class="data-tour">
+                                <div className="main-info-tour">
+                                    <div className="date-time">
+                                        <div className="data-tour">
                                             <p id="head-datetime">Дата</p>
                                             <p>{tour.data}</p>
                                         </div>
-                                        <div class="time-tour">
+                                        <div className="time-tour">
                                             <p id="head-datetime">Время</p>
                                             <p>{tour.time}</p>
                                         </div>
                                     </div>
-                                    <div class="mode-people">
-                                        <div class="mode">
+                                    <div className="mode-people">
+                                        <div className="mode">
                                             <p id="mode-people">Формат:</p>
                                             <h4 id="edit-mode-people">{tour.format}</h4>
                                         </div>
-                                        <div class="people2">
+                                        <div className="people2">
                                             <p id="mode-people">Участники:</p>
-                                            <p id="edit-mode-people">312/<p class="max-player">{tour.max_player}</p></p>
+                                            <p id="edit-mode-people">312/<span className="max-player">{tour.max_player}</span></p>
                                                 
                                         </div>
                                     </div>
                                 </div>
-                                <div class="money2">
+                                <div className="money2">
                                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" id="bitcoin">
                                         <path d="M6.82739 6.54749H10.3812C11.169 6.54749 11.808 7.25651 11.808 7.97428C11.808 8.76208 11.169 9.40107 10.3812 9.40107H6.82739V6.54749Z" stroke="#FF8000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M6.82739 9.39227H10.8889C11.7905 9.39227 12.5171 10.0313 12.5171 10.8191C12.5171 11.6069 11.7905 12.2459 10.8889 12.2459H6.82739V9.39227Z" stroke="#FF8000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -350,9 +80,9 @@ function CardTournament(){
                             </div>
 
                             <div className={`tour-details ${expandedTour === index ? 'expanded' : ''}`}>
-                                <div class="bottom-content-info-tour">
-                                    <div class="info-tour-in-window">
-                                        <p class="info-text">Инфо</p>
+                                <div className="bottom-content-info-tour">
+                                    <div className="info-tour-in-window">
+                                        <p className="info-text">Инфо</p>
                                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M15.7011 27.6782C22.5792 27.6782 28.2067 22.0507 28.2067 15.1727C28.2067 8.29462 22.5792 2.66711 15.7011 2.66711C8.82306 2.66711 3.19556 8.29462 3.19556 15.1727C3.19556 22.0507 8.82306 27.6782 15.7011 27.6782Z" stroke="#89919F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                                             <path d="M15.7009 10.1705V16.4233" stroke="#89919F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -363,8 +93,8 @@ function CardTournament(){
                                             <p>{tour.full_info.description}</p>
                                         </div>
                                     </div>
-                                    <div class="rules-tour-in-window">
-                                        <p class="info-text">Правила</p>
+                                    <div className="rules-tour-in-window">
+                                        <p className="info-text">Правила</p>
                                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M28.3707 21.1006V6.00633C28.3707 4.50567 27.1452 3.39267 25.657 3.51773H25.582C22.9558 3.74283 18.9666 5.08092 16.7406 6.48155L16.528 6.61911C16.1653 6.84421 15.5651 6.84421 15.2024 6.61911L14.8898 6.43152C12.6638 5.04341 8.68699 3.71782 6.06082 3.50522C4.57266 3.38017 3.35962 4.50567 3.35962 5.99383V21.1006C3.35962 22.3011 4.33505 23.4266 5.53559 23.5767L5.89825 23.6267C8.61196 23.9893 12.8013 25.365 15.2024 26.678L15.2524 26.703C15.5901 26.8906 16.1278 26.8906 16.4529 26.703C18.854 25.3775 23.0559 23.9893 25.7821 23.6267L26.1948 23.5767C27.3953 23.4266 28.3707 22.3011 28.3707 21.1006Z" stroke="#89919F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                                             <path d="M15.865 7.03162V25.79" stroke="#89919F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -376,8 +106,8 @@ function CardTournament(){
                                             <p>{tour.full_info.rules}</p>
                                         </div>
                                     </div>
-                                    <div class="map-tour-in-window">
-                                        <p class="info-text">Карты</p>
+                                    <div className="map-tour-in-window">
+                                        <p className="info-text">Карты</p>
 
                                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M2.88647 9.89553V22.0634C2.88647 24.4395 4.57473 25.4149 6.62564 24.2394L9.56445 22.5637C10.2022 22.201 11.2652 22.1635 11.928 22.5011L18.4934 25.7901C19.1562 26.1153 20.2192 26.0902 20.857 25.7276L26.2719 22.6262C26.9597 22.226 27.5349 21.2506 27.5349 20.4502V8.28231C27.5349 5.90626 25.8467 4.93082 23.7958 6.10635L20.857 7.78209C20.2192 8.14475 19.1562 8.18227 18.4934 7.84462L11.928 4.56816C11.2652 4.24302 10.2022 4.26803 9.56445 4.63069L4.14954 7.73207C3.44923 8.13225 2.88647 9.10768 2.88647 9.89553Z" stroke="#89919F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -406,8 +136,8 @@ function CardTournament(){
                                             ))}
                                         </div>
                                     </div>
-                                    <div class="team-tour-in-window">
-                                        <p class="info-text">Команды</p>
+                                    <div className="team-tour-in-window">
+                                        <p className="info-text">Команды</p>
 
                                         <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M22.6966 9.12023C22.6216 9.10773 22.5341 9.10773 22.459 9.12023C20.7333 9.05771 19.3577 7.64458 19.3577 5.8938C19.3577 4.1055 20.7958 2.66736 22.5841 2.66736C24.3724 2.66736 25.8105 4.11801 25.8105 5.8938C25.798 7.64458 24.4224 9.05771 22.6966 9.12023Z" stroke="#89919F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -437,7 +167,7 @@ function CardTournament(){
                                     </div>
                                 </div>
 
-                                <button class="participate">
+                                <button className="participate">
                                         Участвовать
                                 </button>
                             </div>

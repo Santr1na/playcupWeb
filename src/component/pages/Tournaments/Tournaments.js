@@ -1,25 +1,47 @@
-import React , { useState } from "react";
+import React , { useState, useMemo } from "react";
 import './Tournaments.css';
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import ActiveGame from '../../Menu/ActiveGame/ActiveGame';
 import CardTournament from "../../cardsTournaments/cardTournaments";
+import Tour from '../../cardsTournaments/Tour/Tour';
+
 
 
 function Tournaments(){
     const [value, setValue] = useState('');
-
-    const [activeTour, setActiveTour] = useState('future'); // начальное значение 'future'
-
-    // Функция для управления состоянием активного тура
+    const [activeTour, setActiveTour] = useState('future'); // 'future', 'now', 'past'
+  
     const handleTourClick = (tourType) => {
       setActiveTour(tourType);
     };
+  
+    // Фильтрация турниров
+    const filteredTournaments = useMemo(() => {
+      const now = new Date();
+      return Tour.filter(tour => {
+        const start = new Date(tour.dateStart);
+        const end = new Date(tour.dateEnd);
+  
+        if (activeTour === 'future') {
+            console.log(start > now);
+            return start > now;
+        } else if (activeTour === 'now') {
+            console.log(start <= now && end >= now);
+          return start <= now && end >= now;
+        } else if (activeTour === 'past') {
+            console.log(end < now);
+          return end < now;
+        }
+        return true;
+      });
+    }, [activeTour]);
+      
     return(
         <>
             <Header />
 
-            <svg opacity={0.5} class="bg" width="1521" height="1096" viewBox="0 0 1521 1096" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg opacity={0.5} className="bg" width="1521" height="1096" viewBox="0 0 1521 1096" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M542 199L343.5 0.291748H583.5L922.708 339.292L542 199ZM1521 773L748.375 0.291748H988.5L1029.42 41L1521 773ZM1081.21 1096L-16 0.291748H225.5L435.5 209.876L1081.21 1096ZM1.5 743.5H0V503L270.208 771.792L1.5 743.5ZM150 561.896L0 413V172.792L722.812 894.292L150 561.896Z" fill="url(#paint0_linear_8_103)" fill-opacity="0.15"/>
               <defs>
                   <linearGradient id="paint0_linear_8_103" x1="1734" y1="1066" x2="-149.5" y2="-135" gradientUnits="userSpaceOnUse">
@@ -33,7 +55,7 @@ function Tournaments(){
             <div className="center">
                 <div className="up-tournaments-page">
                     <ActiveGame />
-
+                    
                     <button className="create-tournaments" translate="no">
                         <p>Создать турнир</p>
                     </button>
@@ -44,7 +66,10 @@ function Tournaments(){
                 </div>
 
                 <div className="main-tournaments-page">
-                <CardTournament />
+                    <div className="tour-cards">
+                        <CardTournament tournaments={filteredTournaments} />
+                    </div>
+
                 <div className="filters-tournaments-page">
                     <div className="up-filters-tournaments-page">
                         <div className={`future-tour ${activeTour === 'future' ? 'active' : ''}`}
