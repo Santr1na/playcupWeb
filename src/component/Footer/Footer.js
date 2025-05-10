@@ -26,7 +26,7 @@ const Footer = () => {
                         </picture>
                         <div class="act-gamers">
                             <div class="now-play">
-                                <p class="quantity">0<p class="player">играют</p></p>
+                                <p class="quantity">0<span class="player">играют</span></p>
                             </div>
                             <Link to='/tournaments' id="white-link">Активные турниры</Link>
                             <a href="#" id="white-link">Система призов</a>
@@ -34,7 +34,7 @@ const Footer = () => {
                         </div>
                         <div class="help">
                             <div class="quantity-online">
-                                <p class="quantity2">0<p class="online">онлайн</p></p>
+                                <p class="quantity2">0<span class="online">онлайн</span></p>
                             </div>
                             <a href="#" id="white-link">Вопросы</a>
                             <a href="#" id="white-link">Поддержка</a>

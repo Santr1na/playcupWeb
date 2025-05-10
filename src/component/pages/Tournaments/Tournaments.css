@@ -74,6 +74,16 @@ main{
     gap: 100px;
 }
 
+.no-tournaments-message {
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    width: 1000px;
+    height: 100%;
+    align-content: center;
+}
+
+
 .full-tour-tournaments-page{
     display: grid;
     grid-gap: 40px;

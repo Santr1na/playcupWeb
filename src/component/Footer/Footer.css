@@ -67,7 +67,7 @@ footer{
     color: #77FF00;
     padding-right: 4px;
 
-    & p{
+    & span{
         padding-left: 6px;
     }
 }
@@ -82,7 +82,7 @@ footer{
     display: flex;
     color: #77FF00;
     
-    & p{
+    & span{
         padding-left: 6px;
     }
 }

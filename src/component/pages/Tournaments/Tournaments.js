@@ -18,24 +18,22 @@ function Tournaments(){
   
     // Фильтрация турниров
     const filteredTournaments = useMemo(() => {
-      const now = new Date();
-      return Tour.filter(tour => {
-        const start = new Date(tour.dateStart);
-        const end = new Date(tour.dateEnd);
-  
-        if (activeTour === 'future') {
-            console.log(start > now);
-            return start > now;
-        } else if (activeTour === 'now') {
-            console.log(start <= now && end >= now);
-          return start <= now && end >= now;
-        } else if (activeTour === 'past') {
-            console.log(end < now);
-          return end < now;
-        }
-        return true;
-      });
-    }, [activeTour]);
+        const now = new Date();
+        return Tour.filter(tour => {
+          const start = new Date(tour.dateStart);
+          const end = new Date(tour.dateEnd);
+          
+          const matchesDate = (
+            (activeTour === 'future' && start > now) ||
+            (activeTour === 'now' && start <= now && end >= now) ||
+            (activeTour === 'past' && end < now)
+          );
+      
+          const matchesSearch = tour.name.toLowerCase().includes(value.toLowerCase());
+      
+          return matchesDate && matchesSearch;
+        });
+      }, [activeTour, value]);
       
     return(
         <>
@@ -67,7 +65,13 @@ function Tournaments(){
 
                 <div className="main-tournaments-page">
                     <div className="tour-cards">
-                        <CardTournament tournaments={filteredTournaments} />
+                        {filteredTournaments.length > 0 ? (
+                            <CardTournament tournaments={filteredTournaments} />
+                        ) : (
+                            <div className="no-tournaments-message">
+                                <p>Турниры не найдены</p>
+                            </div>
+                        )}
                     </div>
 
                 <div className="filters-tournaments-page">
