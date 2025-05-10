@@ -345,9 +345,121 @@ const Tour = [
         image_game: dota,
         category: 'DOTA 2',
         name: 'CUMBERSOME CUP',
-        data: '10.07.2025',
+        data: '7.05.2025',
         dateStart: "2025-05-7",
         dateEnd: "2025-05-13",
+        time: '18:00',
+        format: '1v1',
+        max_player: 512,
+        prize: 10,
+    
+        full_info: {
+            description: 'Описание ОписаниеОписание ОписаниеОписание ОписаниеОписание Описание',
+            rules: 'Правила ПравилаПравила ПравилаПравила ПравилаПравила ПравилаПравила ПравилаПравила Правила',
+            map: {
+                maps: [
+                    {
+                        photo_map: de_dust2,
+                        name_map: 'Dust 2'
+                    },
+                    {
+                        photo_map: de_mirage,
+                        name_map: 'Mirage'
+                    },
+                    {
+                        photo_map: de_train,
+                        name_map: 'Train'
+                    },
+                ],
+                maps_dota: [
+                    {
+                        name_map: 'У этой игры одна карта'
+                    }
+                ]
+            },
+            teams: {
+                team: [
+                    {
+                        photo_team: photo_team,
+                        name_team: 'DEAD INSADE'
+                    },
+                    {
+                        photo_team: photo_team,
+                        name_team: 'DEAD INSADE'
+                    },
+                    {
+                        photo_team: photo_team,
+                        name_team: 'DEAD INSADE'
+                    }
+                ]
+            }
+          }
+      },
+
+      {
+        id: 8,
+        image_game: cs,
+        category: 'CS 2',
+        name: 'qwe CUP',
+        data: '12.05.2025',
+        dateStart: "2025-05-12",
+        dateEnd: "2025-05-15",
+        time: '18:00',
+        format: '1v1',
+        max_player: 512,
+        prize: 10,
+    
+        full_info: {
+            description: 'Описание ОписаниеОписание ОписаниеОписание ОписаниеОписание Описание',
+            rules: 'Правила ПравилаПравила ПравилаПравила ПравилаПравила ПравилаПравила ПравилаПравила Правила',
+            map: {
+                maps: [
+                    {
+                        photo_map: de_dust2,
+                        name_map: 'Dust 2'
+                    },
+                    {
+                        photo_map: de_mirage,
+                        name_map: 'Mirage'
+                    },
+                    {
+                        photo_map: de_train,
+                        name_map: 'Train'
+                    },
+                ],
+                maps_dota: [
+                    {
+                        name_map: 'У этой игры одна карта'
+                    }
+                ]
+            },
+            teams: {
+                team: [
+                    {
+                        photo_team: photo_team,
+                        name_team: 'DEAD INSADE'
+                    },
+                    {
+                        photo_team: photo_team,
+                        name_team: 'DEAD INSADE'
+                    },
+                    {
+                        photo_team: photo_team,
+                        name_team: 'DEAD INSADE'
+                    }
+                ]
+            }
+          }
+      },
+
+      {
+        id: 9,
+        image_game: dota,
+        category: 'DOTA 2',
+        name: 'CUMBERSOME CUP',
+        data: '16.05.2025',
+        dateStart: "2025-05-16",
+        dateEnd: "2025-05-19",
         time: '18:00',
         format: '1v1',
         max_player: 512,
