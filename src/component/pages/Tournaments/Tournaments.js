@@ -11,9 +11,14 @@ import Tour from '../../cardsTournaments/Tour/Tour';
 function Tournaments(){
     const [value, setValue] = useState('');
     const [activeTour, setActiveTour] = useState('future'); // 'future', 'now', 'past'
+    const [selectedGame, setSelectedGame] = useState('CS 2'); // Добавляем состояние для выбранной игры
   
     const handleTourClick = (tourType) => {
       setActiveTour(tourType);
+    };
+
+    const handleGameSelect = (game) => {
+        setSelectedGame(game);
     };
   
     // Фильтрация турниров
@@ -30,10 +35,12 @@ function Tournaments(){
           );
       
           const matchesSearch = tour.name.toLowerCase().includes(value.toLowerCase());
-      
-          return matchesDate && matchesSearch;
+
+          const matchesGame = selectedGame ? tour.category === selectedGame : true;
+
+          return matchesDate && matchesSearch && matchesGame;
         });
-      }, [activeTour, value]);
+      }, [activeTour, value, selectedGame]);
       
     return(
         <>
@@ -52,7 +59,7 @@ function Tournaments(){
             <main>
             <div className="center">
                 <div className="up-tournaments-page">
-                    <ActiveGame />
+                    <ActiveGame onGameSelect={handleGameSelect}/>
                     
                     <button className="create-tournaments" translate="no">
                         <p>Создать турнир</p>

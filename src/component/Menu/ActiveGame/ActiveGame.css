@@ -1,14 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-.select-game-menu{
-    display: block;
-    font-family: "REM", sans-serif;
-    font-weight: 800;
-    font-size: 20px;
-    padding: 30px;
-}
-
 .active-game{
     display: flex;
     width: max-content;
@@ -19,6 +11,8 @@
 
 .name-game-menu{
     color: #fff;
+    white-space: normal;  /* Разрешаем разрыв текста на несколько строк */
+    word-wrap: break-word; /* Разрешаем перенос длинных слов */
 }
 
 .full-select-game-menu{

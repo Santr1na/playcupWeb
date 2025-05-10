@@ -122,7 +122,7 @@ const Tour = [
       id: 3,
       image_game: dota,
       category: 'DOTA 2',
-      name: 'CUMBERSOME CUP',
+      name: 'qwe CUP',
       data: '7.05.2025',
       dateStart: "2025-05-7",
       dateEnd: "2025-05-15",

@@ -47,59 +47,68 @@ const DropdownArrow = styled.svg`
   transform: ${({ open }) => (open ? 'rotate(180deg)' : 'rotate(0)')};
 `;
 
+const games = [
+  { name: "CS 2", icon: cs },
+  { name: "DOTA 2", icon: dota },
+];
 
-const ActiveGame = () => {
+const ActiveGame = ({onGameSelect}) => {
+  const [activeGame, setActiveGame] = useState(games[0]);
   const [isGameMenuOpen, setGameMenuOpen] = useState(false);
-  const [isGameSettingsOpen, setGameSettingsOpen] = useState(false);
-  
+
   const ActiveGameRef = useRef(null);
-  const GameSettingsRef = useRef(null);
-  
   useClickOutside(ActiveGameRef, () => {
-    if(isGameMenuOpen) setTimeout(() => setGameMenuOpen(false), 50);
+    if (isGameMenuOpen) setTimeout(() => setGameMenuOpen(false), 50);
   });
-  
-  useClickOutside(GameSettingsRef, () => {
-    if(isGameSettingsOpen) setTimeout(() => setGameSettingsOpen(false), 50);
-  });
+
+  const handleGameSelect = (game) => {
+    setActiveGame(game); // Обновляем активную игру
+    onGameSelect(game.name); // Передаем выбранную игру в родительский компонент
+    setGameMenuOpen(false);
+  };
 
   return (
-      <StyledSelectGameMenu 
-        onClick={() => setGameMenuOpen(!isGameMenuOpen)}
-        ref={ActiveGameRef}
-      >
-        <div className="active-game">
-          <img src={cs} alt="CS2" className="image-game-menu"/>
-          <p className="name-game-menu">CS2</p>
-          <DropdownArrow 
-            open={isGameMenuOpen}
-            id="pol" 
-            className="dropdown-arrow-select-game-menu" 
-            width="9" 
-            height="7" 
-            viewBox="0 0 9 7" 
-            fill="none"
-          >
-            <path d="M7.08826 0.330127C7.85806 0.330127 8.33919 1.16346 7.95429 1.83013L5.35621 6.33013C4.97131 6.99679 4.00906 6.99679 3.62416 6.33013L1.02608 1.83013C0.641184 1.16346 1.12231 0.330127 1.89211 0.330127L7.08826 0.330127Z" fill="white"/>
-          </DropdownArrow>
-        </div>
-        
-        <FullSelectGameMenu open={isGameMenuOpen}>
-          <div className="first-select-game-menu">
-            <img src={cs} alt="CS2" className="first-image-game-menu"/>
-            <p className="first-name-game-menu">CS2</p>
-          </div>
+    <StyledSelectGameMenu
+      onClick={() => setGameMenuOpen(!isGameMenuOpen)}
+      ref={ActiveGameRef}
+    >
+      <div className="active-game">
+        <img src={activeGame.icon} alt={activeGame.name} className="image-game-menu" />
+        <p className="name-game-menu">{activeGame.name}</p>
+        <DropdownArrow
+          open={isGameMenuOpen}
+          id="pol"
+          className="dropdown-arrow-select-game-menu"
+          width="9"
+          height="7"
+          viewBox="0 0 9 7"
+          fill="none"
+        >
+          <path d="M7.08826 0.330127C7.85806 0.330127 8.33919 1.16346 7.95429 1.83013L5.35621 6.33013C4.97131 6.99679 4.00906 6.99679 3.62416 6.33013L1.02608 1.83013C0.641184 1.16346 1.12231 0.330127 1.89211 0.330127L7.08826 0.330127Z" fill="white" />
+        </DropdownArrow>
+      </div>
 
-          <div className="line-selection-game-menu">
-            <hr color="#464663" size="0.5"/>
+      <FullSelectGameMenu open={isGameMenuOpen} style={{padding: '20px 30px'}}>
+        {games.map((game, index) => (
+          <div key={game.name} className='select-game'>
+            <div
+              className="select-game-menu-item"
+              onClick={() => handleGameSelect(game)}
+              style={{ display: 'flex', gap: '10px', alignItems: 'center'}}
+            >
+              <img src={game.icon} alt={game.name} className="game-image-menu" />
+              <p className="game-name-menu">{game.name}</p>
+            </div>
+            
+            {index < games.length - 1 && (
+              <div style={{padding: '20px 0'}}>
+                <hr color="#464663" size="0.5" />
+              </div>
+            )}
           </div>
-
-          <div className="two-select-game-menu">
-            <img src={dota} alt="DOTA 2" className="two-image-game-menu"/>
-            <p className="two-name-game-menu">DOTA 2</p>
-          </div>
-        </FullSelectGameMenu>
-      </StyledSelectGameMenu>
+        ))}
+      </FullSelectGameMenu>
+    </StyledSelectGameMenu>
   );
 };
 
